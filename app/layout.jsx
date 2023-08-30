@@ -1,24 +1,29 @@
 import '@styles/global.css'
+import Nav from '@components/Nav'
+import Provider from '@components/Provider'
 
 export const metadata = {
-    title : 'prompedia',
+    title: 'prompedia',
     description: 'share and give description AI Prompt'
 }
 
-const RootLayout = ({children}) => {
-  return (
-    <html lang='en'>
-        <body>
-            <div className='main'>
-                <div className='gradient' />
-            </div>
-            <main className='app'>
-                {children}
-            </main>
-        </body>
+const RootLayout = ({ children }) => {
+    return (
+        <html lang='en'>
+            <body>
+                <Provider>
+                    <div className='main'>
+                        <div className='gradient' />
+                    </div>
+                    <main className='app'>
+                        <Nav />
+                        {children}
+                    </main>
+                </Provider>
+            </body>
 
-    </html>
-  )
+        </html>
+    )
 }
 
 export default RootLayout
